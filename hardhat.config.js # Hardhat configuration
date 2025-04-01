@@ -1,1 +1,21 @@
+Configure Hardhat (hardhat.config.js)
+javascript
 
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+module.exports = {
+    solidity: "0.8.20",
+    networks: {
+        sepolia: {
+            url: process.env.ALCHEMY_API_URL,
+            accounts: [process.env.PRIVATE_KEY]
+        }
+    }
+};
+Create a .env file:
+
+ini
+
+ALCHEMY_API_URL=your_alchemy_or_infura_url
+PRIVATE_KEY=your_wallet_private_key
